@@ -1,0 +1,2059 @@
+{
+	"info": {
+		"_postman_id": "d59b661f-4858-4711-a708-5bd3f7a534cf",
+		"name": "Aplikasi KRS",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "12362353"
+	},
+	"item": [
+		{
+			"name": "CRUD Mahasiswa",
+			"item": [
+				{
+					"name": "ADD Mahasiswa",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"student_id\": \"1410010010\",\r\n        \"name\": \"Nurmawan\",\r\n        \"phone\": \"08219900090\",\r\n        \"dob\": \"1998-08-30\",\r\n        \"entry_date\": \"2014-08-08\",\r\n        \"faculty_id\": \"FMIPA\",\r\n        \"major_id\": \"KIMIA\",\r\n        \"supervisor_id\": \"1234567870\",\r\n        \"semester\": 7,\r\n        \"degree\": \"S1\",\r\n        \"gpa\": \"3.56\",\r\n        \"grad_status\": \"active\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/student/add",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"student",
+								"add"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n        \"student_id\": \"1410010010\",\r\n        \"name\": \"Nurmawan\",\r\n        \"phone\": \"08219900090\",\r\n        \"dob\": \"1998-08-30\",\r\n        \"entry_date\": \"2014-08-08\",\r\n        \"faculty_id\": \"FMIPA\",\r\n        \"major_id\": \"KIMIA\",\r\n        \"supervisor_id\": \"1234567870\",\r\n        \"semester\": 7,\r\n        \"degree\": \"S1\",\r\n        \"gpa\": \"3.56\",\r\n        \"grad_status\": \"active\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8000/student/add",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"student",
+										"add"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://localhost:8081"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "286"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"11e-2sbNhMgLb4uhn9Rj1ebl6zcLmb8\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 09 Mar 2023 08:30:24 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"message\": \"Success\",\n    \"data\": {\n        \"student_id\": \"1410010010\",\n        \"name\": \"Nurmawan\",\n        \"phone\": \"08219900090\",\n        \"dob\": \"1998-08-30\",\n        \"entry_date\": \"2014-08-08\",\n        \"faculty_id\": \"FMIPA\",\n        \"major_id\": \"KIMIA\",\n        \"supervisor_id\": \"1234567870\",\n        \"semester\": \"7\",\n        \"degree\": \"S1\",\n        \"gpa\": 3.56,\n        \"grad_status\": \"active\"\n    }\n}"
+						},
+						{
+							"name": "Bad Request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"student_id\": \"\",\r\n    \"name\":\"\",\r\n    \"phone\":\"\",\r\n    \"dob\":\"\",\r\n    \"entry_date\":\"\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8000/student/add",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"student",
+										"add"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://localhost:8081"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "741"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2e5-paFiIo6M2eZqIKeOly7KUe9l3tI\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 09 Mar 2023 08:31:11 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 400,\n    \"message\": \"Bad Request\",\n    \"code\": \"validator_error\",\n    \"data\": [\n        {\n            \"value\": \"\",\n            \"msg\": \"Student ID Number is required\",\n            \"param\": \"student_id\",\n            \"location\": \"body\"\n        },\n        {\n            \"value\": \"\",\n            \"msg\": \"Name is required\",\n            \"param\": \"name\",\n            \"location\": \"body\"\n        },\n        {\n            \"value\": \"\",\n            \"msg\": \"Phone is required\",\n            \"param\": \"phone\",\n            \"location\": \"body\"\n        },\n        {\n            \"value\": \"\",\n            \"msg\": \"Date of Birth is required\",\n            \"param\": \"dob\",\n            \"location\": \"body\"\n        },\n        {\n            \"value\": \"\",\n            \"msg\": \"Entry Date is required\",\n            \"param\": \"entry_date\",\n            \"location\": \"body\"\n        },\n        {\n            \"msg\": \"Faculty is required\",\n            \"param\": \"faculty_id\",\n            \"location\": \"body\"\n        },\n        {\n            \"msg\": \"Major is required\",\n            \"param\": \"major_id\",\n            \"location\": \"body\"\n        },\n        {\n            \"msg\": \"Supervisor is required\",\n            \"param\": \"supervisor_id\",\n            \"location\": \"body\"\n        },\n        {\n            \"msg\": \"Degree is required\",\n            \"param\": \"degree\",\n            \"location\": \"body\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "GET Mahasiswa",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8000/student/list?search=&limit=1&page=10&order=desc",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"student",
+								"list"
+							],
+							"query": [
+								{
+									"key": "search",
+									"value": ""
+								},
+								{
+									"key": "limit",
+									"value": "1"
+								},
+								{
+									"key": "page",
+									"value": "10"
+								},
+								{
+									"key": "order",
+									"value": "desc",
+									"description": "ASC | DESC"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8000/student/list?search=al&limit=1&page=1&order=desc",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"student",
+										"list"
+									],
+									"query": [
+										{
+											"key": "search",
+											"value": "al"
+										},
+										{
+											"key": "limit",
+											"value": "1"
+										},
+										{
+											"key": "page",
+											"value": "1"
+										},
+										{
+											"key": "order",
+											"value": "desc",
+											"description": "ASC | DESC"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://localhost:8081"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "432"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1b0-N2YMvhlepY8zKnVSP79CxtzQtp0\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 09 Mar 2023 07:17:17 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"message\": \"Success\",\n    \"data\": {\n        \"totalItems\": 1,\n        \"totalPages\": 1,\n        \"currentPage\": 1,\n        \"students\": [\n            {\n                \"student_id\": \"1411070004\",\n                \"name\": \"Alfatih\",\n                \"phone\": \"08531333556\",\n                \"dob\": \"1997-12-12\",\n                \"entry_date\": \"2014-08-08\",\n                \"faculty_id\": \"TEKNIK\",\n                \"major_id\": \"TEKNIK KIMIA\",\n                \"supervisor_id\": \"1234567890\",\n                \"semester\": 7,\n                \"degree\": \"S1\",\n                \"gpa\": \"4.00\",\n                \"grad_status\": \"active\",\n                \"createdAt\": \"2023-03-08T23:19:24.000Z\",\n                \"updatedAt\": \"2023-03-08T23:26:49.000Z\"\n            }\n        ]\n    }\n}"
+						},
+						{
+							"name": "Empty Data",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8000/student/list?search=&limit=1&page=10&order=desc",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"student",
+										"list"
+									],
+									"query": [
+										{
+											"key": "search",
+											"value": ""
+										},
+										{
+											"key": "limit",
+											"value": "1"
+										},
+										{
+											"key": "page",
+											"value": "10"
+										},
+										{
+											"key": "order",
+											"value": "desc",
+											"description": "ASC | DESC"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://localhost:8081"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "104"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"68-s5BGn9ALa0JHBw6RYStNUh5PsAY\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 09 Mar 2023 07:18:17 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"message\": \"Success\",\n    \"data\": {\n        \"totalItems\": 4,\n        \"totalPages\": 4,\n        \"currentPage\": 10,\n        \"students\": []\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "GET Detail Mahasiswa",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8000/student/1411070001",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"student",
+								"1411070001"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Not Found",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8000/student/1411070009",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"student",
+										"1411070009"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://localhost:8081"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "36"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"24-e6q5W2WItzjVDpSEz7+plLiKkWo\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 09 Mar 2023 07:14:51 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 404,\n    \"message\": \"Not Found\"\n}"
+						},
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8000/student/1411070001",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"student",
+										"1411070001"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://localhost:8081"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "379"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"17b-PS4XeTsHRU023uYiinG0nXIootQ\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 09 Mar 2023 07:15:22 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"message\": \"Success\",\n    \"data\": {\n        \"student_id\": \"1411070001\",\n        \"name\": \"Sandie Hafidzha\",\n        \"phone\": \"08219040090\",\n        \"dob\": \"1997-06-30\",\n        \"entry_date\": \"2014-08-08\",\n        \"faculty_id\": \"TEKNIK\",\n        \"major_id\": \"TEKNIK KIMIA\",\n        \"supervisor_id\": \"1234567890\",\n        \"semester\": 7,\n        \"degree\": \"S1\",\n        \"gpa\": \"3.56\",\n        \"grad_status\": \"active\",\n        \"createdAt\": \"2023-03-08T23:15:24.000Z\",\n        \"updatedAt\": \"2023-03-08T23:26:49.000Z\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "UPDATE Mahasiswa",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"name\": \"Nurmawan\",\r\n        \"phone\": \"08219900090\",\r\n        \"dob\": \"1998-08-31\",\r\n        \"entry_date\": \"2014-08-08\",\r\n        \"faculty_id\": \"FMIPA\",\r\n        \"major_id\": \"KIMIA\",\r\n        \"supervisor_id\": \"1234567870\",\r\n        \"semester\": 7,\r\n        \"degree\": \"S1\",\r\n        \"gpa\": \"3.56\",\r\n        \"grad_status\": \"active\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/student/update/1410010011",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"student",
+								"update",
+								"1410010011"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n        \"name\": \"Nurmawan\",\r\n        \"phone\": \"08219900090\",\r\n        \"dob\": \"1998-08-31\",\r\n        \"entry_date\": \"2014-08-08\",\r\n        \"faculty_id\": \"FMIPA\",\r\n        \"major_id\": \"KIMIA\",\r\n        \"supervisor_id\": \"1234567870\",\r\n        \"semester\": 7,\r\n        \"degree\": \"S1\",\r\n        \"gpa\": \"3.56\",\r\n        \"grad_status\": \"active\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8000/student/update/1410010010",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"student",
+										"update",
+										"1410010010"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://localhost:8081"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "286"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"11e-2ZpIlREhVvbDPyQ7xO6sRSNxkyE\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 09 Mar 2023 08:38:23 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"message\": \"Success\",\n    \"data\": {\n        \"student_id\": \"1410010010\",\n        \"name\": \"Nurmawan\",\n        \"phone\": \"08219900090\",\n        \"dob\": \"1998-08-31\",\n        \"entry_date\": \"2014-08-08\",\n        \"faculty_id\": \"FMIPA\",\n        \"major_id\": \"KIMIA\",\n        \"supervisor_id\": \"1234567870\",\n        \"semester\": \"7\",\n        \"degree\": \"S1\",\n        \"gpa\": 3.56,\n        \"grad_status\": \"active\"\n    }\n}"
+						},
+						{
+							"name": "Not Found",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n        \"name\": \"Nurmawan\",\r\n        \"phone\": \"08219900090\",\r\n        \"dob\": \"1998-08-31\",\r\n        \"entry_date\": \"2014-08-08\",\r\n        \"faculty_id\": \"FMIPA\",\r\n        \"major_id\": \"KIMIA\",\r\n        \"supervisor_id\": \"1234567870\",\r\n        \"semester\": 7,\r\n        \"degree\": \"S1\",\r\n        \"gpa\": \"3.56\",\r\n        \"grad_status\": \"active\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8000/student/update/1410010011",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"student",
+										"update",
+										"1410010011"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://localhost:8081"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "36"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"24-e6q5W2WItzjVDpSEz7+plLiKkWo\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 09 Mar 2023 08:39:03 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 404,\n    \"message\": \"Not Found\"\n}"
+						}
+					]
+				},
+				{
+					"name": "DELETE Mahasiswa",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8000/student/delete/1410010010",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"student",
+								"delete",
+								"1410010010"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Not Found",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "localhost:8000/student/delete/1410010011",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"student",
+										"delete",
+										"1410010011"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://localhost:8081"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "36"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"24-e6q5W2WItzjVDpSEz7+plLiKkWo\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 09 Mar 2023 08:42:45 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 404,\n    \"message\": \"Not Found\"\n}"
+						},
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "localhost:8000/student/delete/1410010010",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"student",
+										"delete",
+										"1410010010"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://localhost:8081"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "44"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2c-2ZIImtbtkKQpx9CE3v9qG6EHhJE\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 09 Mar 2023 08:43:14 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"message\": \"Success\",\n    \"data\": {}\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "CRUD Mata Kuliah",
+			"item": [
+				{
+					"name": "ADD Mata Kuliah",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"course_id\": \"TKS7007\",\r\n    \"name\": \"Komputasi\",\r\n    \"lecturer_id\": \"1234567892\",\r\n    \"classroom_id\": \"ABC3\",\r\n    \"time_id\": \"Friday 1 PM\",\r\n    \"credit\": 4,\r\n    \"max_student\": 4\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/course/add",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"course",
+								"add"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Bad Request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8000/course/add",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"course",
+										"add"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://localhost:8081"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "475"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1db-oYSAvSNbzAienYTLKd5hyTFUDIQ\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 09 Mar 2023 09:05:18 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 400,\n    \"message\": \"Bad Request\",\n    \"code\": \"validator_error\",\n    \"data\": [\n        {\n            \"msg\": \"Course Code is required\",\n            \"param\": \"course_id\",\n            \"location\": \"body\"\n        },\n        {\n            \"msg\": \"Name is required\",\n            \"param\": \"name\",\n            \"location\": \"body\"\n        },\n        {\n            \"msg\": \"Lecturer is required\",\n            \"param\": \"lecturer_id\",\n            \"location\": \"body\"\n        },\n        {\n            \"msg\": \"Classroom is required\",\n            \"param\": \"classroom_id\",\n            \"location\": \"body\"\n        },\n        {\n            \"msg\": \"Time is required\",\n            \"param\": \"time_id\",\n            \"location\": \"body\"\n        },\n        {\n            \"msg\": \"Credit is required\",\n            \"param\": \"credit\",\n            \"location\": \"body\"\n        }\n    ]\n}"
+						},
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"course_id\": \"TKS7007\",\r\n    \"name\": \"Komputasi\",\r\n    \"lecturer_id\": \"1234567892\",\r\n    \"classroom_id\": \"ABC3\",\r\n    \"time_id\": \"Friday 1 PM\",\r\n    \"credit\": 4,\r\n    \"max_student\": 4\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8000/course/add",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"course",
+										"add"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://localhost:8081"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "188"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"bc-QWFtc58gPbnMTAretD1XbCdAh/g\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 09 Mar 2023 09:06:20 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"message\": \"Success\",\n    \"data\": {\n        \"course_id\": \"TKS7007\",\n        \"name\": \"Komputasi\",\n        \"lecturer_id\": \"1234567892\",\n        \"classroom_id\": \"ABC3\",\n        \"time_id\": \"Friday 1 PM\",\n        \"credit\": \"4\",\n        \"max_student\": \"4\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "GET Mata Kuliah",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8000/course/list?search=tuga&limit=10&page=1&order=desc",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"course",
+								"list"
+							],
+							"query": [
+								{
+									"key": "search",
+									"value": "tuga"
+								},
+								{
+									"key": "limit",
+									"value": "10"
+								},
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "order",
+									"value": "desc",
+									"description": "ASC | DESC"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8000/course/list?search=tuga&limit=10&page=1&order=desc",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"course",
+										"list"
+									],
+									"query": [
+										{
+											"key": "search",
+											"value": "tuga"
+										},
+										{
+											"key": "limit",
+											"value": "10"
+										},
+										{
+											"key": "page",
+											"value": "1"
+										},
+										{
+											"key": "order",
+											"value": "desc",
+											"description": "ASC | DESC"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://localhost:8081"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "354"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"162-dg+YkO5e6/pt8rD1fKRI1dnAkUw\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 09 Mar 2023 08:54:26 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"message\": \"Success\",\n    \"data\": {\n        \"totalItems\": 1,\n        \"totalPages\": 1,\n        \"currentPage\": 1,\n        \"courses\": [\n            {\n                \"course_id\": \"TKS7006\",\n                \"name\": \"Tugas Perancangan Pabrik\",\n                \"lecturer_id\": \"1234567892\",\n                \"classroom_id\": \"ABC3\",\n                \"time_id\": \"Monday 1 PM\",\n                \"credit\": 2,\n                \"is_active\": true,\n                \"max_student\": 4,\n                \"createdAt\": \"2023-03-08T23:45:45.000Z\",\n                \"updatedAt\": \"2023-03-08T23:45:45.000Z\"\n            }\n        ]\n    }\n}"
+						},
+						{
+							"name": "Empty Data",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8000/course/list?search=tuga&limit=10&page=11&order=desc",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"course",
+										"list"
+									],
+									"query": [
+										{
+											"key": "search",
+											"value": "tuga"
+										},
+										{
+											"key": "limit",
+											"value": "10"
+										},
+										{
+											"key": "page",
+											"value": "11"
+										},
+										{
+											"key": "order",
+											"value": "desc",
+											"description": "ASC | DESC"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://localhost:8081"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "103"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"67-+0oKbkFDtc2oHFjvIhlVpm9cbTQ\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 09 Mar 2023 08:55:02 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"message\": \"Success\",\n    \"data\": {\n        \"totalItems\": 1,\n        \"totalPages\": 1,\n        \"currentPage\": 11,\n        \"courses\": []\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "GET Detail Mata Kuliah",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8000/course/TKS7006",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"course",
+								"TKS7006"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8000/course/TKS7006",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"course",
+										"TKS7006"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://localhost:8081"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "294"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"126-B8GHucLQxW7EgHy706nwdxv+lAc\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 09 Mar 2023 08:57:12 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"message\": \"Success\",\n    \"data\": {\n        \"course_id\": \"TKS7006\",\n        \"name\": \"Tugas Perancangan Pabrik\",\n        \"lecturer_id\": \"1234567892\",\n        \"classroom_id\": \"ABC3\",\n        \"time_id\": \"Monday 1 PM\",\n        \"credit\": 2,\n        \"is_active\": true,\n        \"max_student\": 4,\n        \"createdAt\": \"2023-03-08T23:45:45.000Z\",\n        \"updatedAt\": \"2023-03-08T23:45:45.000Z\"\n    }\n}"
+						},
+						{
+							"name": "Not Found",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8000/course/TKS7012",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"course",
+										"TKS7012"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://localhost:8081"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "36"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"24-e6q5W2WItzjVDpSEz7+plLiKkWo\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 09 Mar 2023 08:57:46 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 404,\n    \"message\": \"Not Found\"\n}"
+						}
+					]
+				},
+				{
+					"name": "UPDATE Mata Kuliah",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Komputasi\",\r\n    \"lecturer_id\": \"1234567892\",\r\n    \"classroom_id\": \"ABC6\",\r\n    \"time_id\": \"Friday 8 AM\",\r\n    \"credit\": 4,\r\n    \"max_student\": 4\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/course/update/TKS7007",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"course",
+								"update",
+								"TKS7007"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Not Found",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8000/course/update/TKS7012",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"course",
+										"update",
+										"TKS7012"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://localhost:8081"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "36"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"24-e6q5W2WItzjVDpSEz7+plLiKkWo\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 09 Mar 2023 09:09:27 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 404,\n    \"message\": \"Not Found\"\n}"
+						},
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Komputasi\",\r\n    \"lecturer_id\": \"1234567892\",\r\n    \"classroom_id\": \"ABC6\",\r\n    \"time_id\": \"Friday 8 AM\",\r\n    \"credit\": 4,\r\n    \"max_student\": 4\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8000/course/update/TKS7007",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"course",
+										"update",
+										"TKS7007"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://localhost:8081"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "166"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"a6-ezyKLXgVfqyNzrSDOqgeTAtXT2Q\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 09 Mar 2023 09:10:57 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"message\": \"Success\",\n    \"data\": {\n        \"name\": \"Komputasi\",\n        \"lecturer_id\": \"1234567892\",\n        \"classroom_id\": \"ABC6\",\n        \"time_id\": \"Friday 8 AM\",\n        \"credit\": \"4\",\n        \"max_student\": \"4\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "DELETE Mata Kuliah",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8000/course/delete/TKS7007",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"course",
+								"delete",
+								"TKS7007"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "localhost:8000/course/delete/TKS7007",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"course",
+										"delete",
+										"TKS7007"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://localhost:8081"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "44"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2c-2ZIImtbtkKQpx9CE3v9qG6EHhJE\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 09 Mar 2023 09:11:49 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"message\": \"Success\",\n    \"data\": {}\n}"
+						},
+						{
+							"name": "Not Found",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "localhost:8000/course/delete/TKS7008",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"course",
+										"delete",
+										"TKS7008"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://localhost:8081"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "36"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"24-e6q5W2WItzjVDpSEz7+plLiKkWo\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 09 Mar 2023 09:12:24 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 404,\n    \"message\": \"Not Found\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Isi KRS",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"student_id\": \"1410010011\",\r\n    \"semester\": 7,\r\n    \"course_list\": [\r\n        \"TKS7001\",\r\n        \"TKS7002\",\r\n        \"TKS7003\"\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/student/course_sheet/save",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"student",
+						"course_sheet",
+						"save"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Bad Request: Course List More than 3 data",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"student_id\": \"1410010010\",\r\n    \"semester\": 7,\r\n    \"course_list\": [\r\n        \"TKS7001\",\r\n        \"TKS7002\",\r\n        \"TKS7003\",\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/student/course_sheet/save",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"student",
+								"course_sheet",
+								"save"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "http://localhost:8081"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "235"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"eb-dXucsgK4pYIuZpJtdGK6jinaMHU\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 09 Mar 2023 13:45:28 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": 400,\n    \"message\": \"Bad Request\",\n    \"code\": \"validator_error\",\n    \"data\": [\n        {\n            \"value\": [\n                \"TKS7001\",\n                \"TKS7002\",\n                \"TKS7003\",\n                \"TKS7004\"\n            ],\n            \"msg\": \"Course must be in Array with minimum 1 data and maximum 3 data\",\n            \"param\": \"course_list\",\n            \"location\": \"body\"\n        }\n    ]\n}"
+				},
+				{
+					"name": "Bad Request : Student has Applied Course Sheet",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"student_id\": \"1411070003\",\r\n    \"semester\": 7,\r\n    \"course_list\": [\r\n        \"TKS7001\",\r\n        \"TKS7002\",\r\n        \"TKS7003\"\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/student/course_sheet/save",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"student",
+								"course_sheet",
+								"save"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "http://localhost:8081"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "91"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"5b-UJNpQjF6pngRCNNcG7fSv0vw4u0\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 09 Mar 2023 15:52:23 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": 400,\n    \"message\": \"Student has applied course sheet for the corresponding semester \"\n}"
+				},
+				{
+					"name": "Success",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"student_id\": \"1411070004\",\r\n    \"semester\": 7,\r\n    \"course_list\": [\r\n        \"TKS7001\",\r\n        \"TKS7002\"\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/student/course_sheet/save",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"student",
+								"course_sheet",
+								"save"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "http://localhost:8081"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "120"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"78-K4N6m07+MpaomFWTPou7HGtS5MU\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 09 Mar 2023 15:53:13 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": 200,\n    \"message\": \"Success\",\n    \"data\": {\n        \"student_id\": \"1411070004\",\n        \"semester\": \"7\",\n        \"course_list\": [\n            \"TKS7001\",\n            \"TKS7002\"\n        ]\n    }\n}"
+				},
+				{
+					"name": "Bad Request : Exceed max limit",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"student_id\": \"1411070002\",\r\n    \"semester\": 7,\r\n    \"course_list\": [\r\n        \"TKS7001\",\r\n        \"TKS7002\",\r\n        \"TKS7003\",\r\n        \"TKS7004\"\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/student/course_sheet/save",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"student",
+								"course_sheet",
+								"save"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "http://localhost:8081"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "214"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"d6-zFQrzK7AxtjWkPHtwVJ5gjn5JLQ\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 09 Mar 2023 15:54:22 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": 400,\n    \"message\": \"Bad Request\",\n    \"code\": \"validator_error\",\n    \"data\": [\n        {\n            \"value\": [\n                \"TKS7001\",\n                \"TKS7002\",\n                \"TKS7003\",\n                \"TKS7004\"\n            ],\n            \"msg\": \"Student can only choose maximum 3 courses\",\n            \"param\": \"course_list\",\n            \"location\": \"body\"\n        }\n    ]\n}"
+				},
+				{
+					"name": "Bad Request : Exceed Quota",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"student_id\": \"1410010011\",\r\n    \"semester\": 7,\r\n    \"course_list\": [\r\n        \"TKS7001\",\r\n        \"TKS7002\",\r\n        \"TKS7003\"\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/student/course_sheet/save",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"student",
+								"course_sheet",
+								"save"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "http://localhost:8081"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "144"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"90-6mu0KA4EzgyjF/x3cC2hO8ddFE4\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 09 Mar 2023 16:04:22 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": 400,\n    \"message\": \"Some course is fully applied\",\n    \"data\": [\n        {\n            \"course_id\": \"TKS7001\",\n            \"max_student\": 4\n        },\n        {\n            \"course_id\": \"TKS7002\",\n            \"max_student\": 4\n        }\n    ]\n}"
+				}
+			]
+		}
+	]
+}
