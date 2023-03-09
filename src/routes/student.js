@@ -9,7 +9,7 @@ const studentRoutes = Router();
 
 studentRoutes
     .get("/list", listData)
-    .get("/:student_id", findOneData)
+    .get("/:id", findOneData)
     .post("/add", studentRule, validate, addData) 
     .put("/update/:id", optStudentRule, validate, updateData) 
     .delete("/delete/:id", deleteData) 

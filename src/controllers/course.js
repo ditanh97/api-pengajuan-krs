@@ -3,11 +3,11 @@ import {msgToString, resJson} from "#root/helpers/format";
 import {getPagination, getPagingData} from "#root/helpers/pagination";
 const {validationResult} = require("express-validator");
 const {
-    student: dataTable
+    course: dataTable
 } = db;
 
-const pkName = 'student_id';
-const dataName = 'students';
+const pkName = 'course_id';
+const dataName = 'courses';
 const searchColumns = ['name'];
 const Op = db.Sequelize.Op;
 const sequelize = db.Sequelize;
