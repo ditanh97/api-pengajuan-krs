@@ -1,7 +1,11 @@
 'use strict';
 export default (sequelize, DataTypes) => {
   const course = sequelize.define('tt_courses', {
-    course_id: DataTypes.STRING(7),
+    course_id: {
+      type: DataTypes.STRING(7),
+      primaryKey: true,
+      allowNull: false,
+    },
     name: DataTypes.STRING(256),
     lecturer_id: DataTypes.STRING(10),
     classroom_id: DataTypes.STRING(4),

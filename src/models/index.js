@@ -1,4 +1,4 @@
-import dbConfig from "#root/config/db";
+import dbConfig from "#root/configs/db";
 import Sequelize from "sequelize";
 import studentModel from "./student";
 import courseModel from "./course";
@@ -7,6 +7,7 @@ import selectionDetailModel from "./selection_detail";
 
 const sequelize = new Sequelize(dbConfig.DB, dbConfig.USER, dbConfig.PASSWORD, {
     host: dbConfig.HOST,
+    port: dbConfig.PORT,
     dialect: dbConfig.dialect,
     operatorsAliases: false,
     pool: {

@@ -1,7 +1,11 @@
 'use strict';
 export default (sequelize, DataTypes) => {
   const student = sequelize.define('tt_students', {
-    student_id: DataTypes.STRING(10),
+    student_id: {
+      type: DataTypes.STRING(10),
+      primaryKey: true,
+      allowNull: false,
+    },
     name: DataTypes.STRING(256),
     phone: DataTypes.CHAR(20),
     dob: DataTypes.DATE,
@@ -12,7 +16,7 @@ export default (sequelize, DataTypes) => {
     semester: DataTypes.TINYINT,
     degree: DataTypes.CHAR(4),
     gpa: DataTypes.DECIMAL(3,2),
-    grade_status: DataTypes.ENUM('active', 'graduate', 'drop_out'),
+    grad_status: DataTypes.ENUM('active', 'graduate', 'drop_out'),
     createdAt: {
       type: DataTypes.DATE,
       allowNull: false,

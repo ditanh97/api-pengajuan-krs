@@ -2,6 +2,10 @@ import "dotenv/config";
 import express from "express";
 import bodyParser from "body-parser";
 import cors from "cors";
+import {Router} from "#root/routes";
+import {PORT} from "#root/constants";
+import {msgToJSON, resJson, errorMessage} from "#root/helpers/format";
+
 
 const app = express();
 
@@ -17,13 +21,28 @@ app.use(bodyParser.json());
 // parse requests of content-type - application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: true }));
 
-// simple route
-app.get("/", (req, res) => {
-  res.json({ message: "Welcome to bezkoder application." });
-});
 
+app.use('/', Router);
 // set port, listen for requests
-const PORT = process.env.PORT || 8080;
-app.listen(PORT, () => {
+
+app.use((err, req, res, next)=>{
+  try {
+    //customize error
+    const {status, message} = msgToJSON(err.message);
+    return resJson(res, status, message, null);
+  }catch (e) {
+    const errMessage = errorMessage(err);
+    if (err.code == 'EBADCSRFTOKEN') {
+      return resJson(res, 403, "Forbidden Access", null)
+    } else {
+      return resJson(res, 500, errMessage, null)
+    }
+      
+  }
+})
+
+const PORT_RUN = PORT || 8080;
+app.listen(PORT_RUN, () => {
   console.log(`Server is running on port ${PORT}.`);
 });
+
