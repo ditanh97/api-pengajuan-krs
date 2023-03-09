@@ -73,9 +73,15 @@ cd api-pengajuan.krs
 yarn
 ```
 
+## Dump database
+`$ mysqldump -u [uname] -p db_name > dump.sql `
+
 ## Run
 ```
 yarn run dev
 ```
+
+## Export Postman
+API documentation can be exported to postman using this file `Aplikasi KRS.postman_collection.json`
 
 
