@@ -81,6 +81,11 @@ export const findOneData = async (req, res, next) => {
 
 export const addData = async (req, res, next) => {
     try {
+        const {student_id} = req.body
+        const findData = await dataTable.findOne({
+            where: {[pkName]: student_id}
+        });
+        if ( findData ) return next (new Error(msgToString(`Student already exist`, 404)));
       	const createData = await dataTable.create(req.body);
       	if ( !createData ) return next (new Error(msgToString(`Bad Request`, 400)));
         return resJson(res, 200, "Success", req.body)

@@ -2054,6 +2054,89 @@
 					"body": "{\n    \"status\": 400,\n    \"message\": \"Some course is fully applied\",\n    \"data\": [\n        {\n            \"course_id\": \"TKS7001\",\n            \"max_student\": 4\n        },\n        {\n            \"course_id\": \"TKS7002\",\n            \"max_student\": 4\n        }\n    ]\n}"
 				}
 			]
+		},
+		{
+			"name": "GET KRS",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/student/course_sheet/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"student",
+						"course_sheet",
+						"1"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Success",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8000/student/course_sheet/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"student",
+								"course_sheet",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "http://localhost:8081"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "622"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"26e-LI5gICovNkbxOmnr3DJQqaDqpyw\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 09 Mar 2023 22:02:49 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": 200,\n    \"message\": \"Success\",\n    \"data\": {\n        \"course_selection_id\": 1,\n        \"student_id\": \"1411070003\",\n        \"semester\": 7,\n        \"curr_gpa\": \"0.00\",\n        \"createdAt\": \"2023-03-09T13:53:53.000Z\",\n        \"updatedAt\": \"2023-03-09T13:53:53.000Z\",\n        \"student\": {\n            \"student_id\": \"1411070003\",\n            \"name\": \"Wiera Herdy\",\n            \"dob\": \"1997-09-07\"\n        },\n        \"course_list\": [\n            {\n                \"detail_id\": 1,\n                \"course\": {\n                    \"course_id\": \"TKS7001\",\n                    \"name\": \"Desain Produk Industri\",\n                    \"lecturer_id\": \"1234567890\"\n                }\n            },\n            {\n                \"detail_id\": 2,\n                \"course\": {\n                    \"course_id\": \"TKS7002\",\n                    \"name\": \"Sistem Utilitas\",\n                    \"lecturer_id\": \"1234567891\"\n                }\n            },\n            {\n                \"detail_id\": 3,\n                \"course\": {\n                    \"course_id\": \"TKS7003\",\n                    \"name\": \"Perancangan Proses Teknik Kimia\",\n                    \"lecturer_id\": \"1234567892\"\n                }\n            }\n        ]\n    }\n}"
+				}
+			]
 		}
 	]
 }

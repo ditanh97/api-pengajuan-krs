@@ -9,7 +9,7 @@ const {
 } = db;
 import {QueryTypes  } from "sequelize";
 
-const pkName = 'course_id';
+const pkName = 'course_selection_id';
 const dataName = 'courses';
 const searchColumns = ['name'];
 const Op = db.Sequelize.Op;
@@ -84,13 +84,45 @@ export const addCourse = async (req, res, next) => {
 };
 
 
-export const getCourse = async (req, res, next) => {
+export const getOneCourseSheet = async (req, res, next) => {
+    let idFromParam = req.params.id || null;
+    let {id} = req.query;
+    id = id == null || typeof id == 'undefined' ? idFromParam: id;
     try {
-      	const createData = await dataTable.create(req.body);
-      	if ( !createData ) return next (new Error(msgToString(`Bad Request`, 400)));
-        return resJson(res, 200, "Success", req.body)
+        let where = {[pkName]: id}
+        if (!id) return next (new Error(msgToString(`Please provide id query params request`, 400)))
+        const data = await courseSelection.findOne({
+            where,
+            include: [
+                {
+                    model: student,
+                    attributes: [],
+                    attributes: ["student_id", "name", "dob"],
+                    as: "student"
+                },   
+                {
+                    model: selectionDetail,
+                    attributes: ["detail_id"],
+                    as: "course_list",
+                    include: [
+                        {
+                            model: course,
+                            attributes: ["course_id", "name", "lecturer_id"],
+                            as: "course"
+                        }
+                    ]
+                }
+            ],       
+        });
+        if (data) {
+            return resJson(res, 200, "Success", {
+                ...data.dataValues
+            }); 
+        }else {
+            return next(new Error(msgToString(`Not Found`, 404)));
+        }
     }catch (err) {
         if (err.message) return next(err);
         return next(new Error(msgToString('Something went wrong on server', 500)));
-    } 
+    }
 };
