@@ -30,7 +30,7 @@ export default (sequelize, DataTypes) => {
     })
     course_selection.hasMany(models.selection_detail, {
         foreignKey: "course_selection_id",
-        as: "krs",
+        as: "course_list",
     })
   };
   return course_selection;

@@ -2,8 +2,8 @@ export const msgToJSON = (string) => {
     return JSON.parse(string)
 }
 
-export const msgToString = (message, status) => {
-    return JSON.stringify({message, status})
+export const msgToString = (message, status, data = null) => {
+    return JSON.stringify({message, status, data})
 }
 
 export const resJson = (res, status, message, data) => {

@@ -1,7 +1,6 @@
 import db from "#root/models";
 import {msgToString, resJson} from "#root/helpers/format";
 import {getPagination, getPagingData} from "#root/helpers/pagination";
-const {validationResult} = require("express-validator");
 const {
     course: dataTable
 } = db;

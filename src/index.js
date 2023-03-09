@@ -28,8 +28,10 @@ app.use('/', Router);
 app.use((err, req, res, next)=>{
   try {
     //customize error
-    const {status, message} = msgToJSON(err.message);
-    return resJson(res, status, message, null);
+    const {status, message, data} = msgToJSON(err.message);
+    console.log(data, "hallooo")
+    if (!data ) return resJson(res, status, message, null);
+    return resJson(res, status, message, data);
   }catch (e) {
     const errMessage = errorMessage(err);
     if (err.code == 'EBADCSRFTOKEN') {
